@@ -18,6 +18,7 @@ dbConnection();
 //Rutas
 app.use('/api/usuarios', require('./routes/usuarios'));
 app.use('/api/login', require('./routes/auth'));
+app.use('/api/vuelos', require('./routes/vuelos'));
 
 
 //Lectura del puerto en el administrador
