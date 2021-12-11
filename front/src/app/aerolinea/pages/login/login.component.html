@@ -7,15 +7,16 @@
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
           <form>
               <h3 class="text-center mb-4">Aerolínea</h3>
+              <h5 class="text-center mb-4">Login</h5>
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form1Example13" class="form-control form-control-lg" />
+              <input type="email" id="form1Example13" class="form-control form-control-lg" [(ngModel)]="usuario" />
               <label class="form-label" for="form1Example13">Correo electrónico</label>
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form1Example23" class="form-control form-control-lg" />
+              <input type="password" id="form1Example23" class="form-control form-control-lg" [(ngModel)]="contrasena"/>
               <label class="form-label" for="form1Example23">Contraseña</label>
             </div>
   
@@ -31,17 +32,16 @@
                 />
                 <label class="form-check-label" for="form1Example3"> Recordarme </label>
               </div>
-              <a href="#!">Registrarse</a>
+              <a routerLink="/aerolinea/sign-in">Registrarse</a>
               <a href="#!">¿Olvidaste tu contraseña?</a>
             </div>
   
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Iniciar sesion</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" routerLink="/aerolinea/home">Iniciar Sesión</button>
   
             <div class="divider d-flex align-items-center my-4">
               <p class="text-center fw-bold mx-3 mb-0 text-muted">Ó</p>
             </div>
-  
             <a class="btn btn-primary btn-lg btn-block" style="background-color: #db3236" href="#!" role="button">
               <i class="fab fa-google me-2"></i>Continuar con Google
             </a>  
