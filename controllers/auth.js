@@ -30,7 +30,6 @@ const login = async(req, res = response) => {
         //Generar el token - JWT
         const token  = await generarJWT(usuarioDB.id);
 
-
         res.json({
             ok:true,
             token

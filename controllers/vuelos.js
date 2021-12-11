@@ -56,7 +56,7 @@ const actualizarVuelo = async(req, res = response) => {
 
         //Actualizaciones
         const {origen, destino, fecha, pasajeros, ...campos} = req.body;
-        const vueloActualizado = await Vuelo.findByIdAndUpdate(uid,origen, destino, fecha, pasajeros , {new: true});
+        const vueloActualizado = await Vuelo.findByIdAndUpdate(uid, campos, {new: true});
 
         res.json({
             ok: true,
