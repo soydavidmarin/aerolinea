@@ -4,6 +4,33 @@ const Usuario = require('../models/usuario');
 const { generarJWT } = require('../helpers/jwt');
 
 
+const getUsuario = async (req, res = response) => {
+    
+    const uid = req.params.id;
+
+    try {
+
+        const usuarioDB = await Usuario.findById(uid);
+        if (!usuarioDB) {
+            return res.status(404).json({
+                ok: false,
+                msg: 'No se encuentra el usuario con ese id'
+            });
+        }    
+        res.json({
+            ok: true,
+            usuarioDB
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            ok: false,
+            msg: 'No se tiene el rol necesario para realizar esta operación'
+        });
+    }
+}
+
+
 const getUsuarios = async (req,res) => {
     const usuarios = await Usuario.find({}, 'nombre email rol google');
 
@@ -12,6 +39,8 @@ const getUsuarios = async (req,res) => {
         usuarios
     });
 };
+
+
 
 const crearUsuario = async (req,res = response) => {
     const { email, password} = req.body;
@@ -125,6 +154,7 @@ const borrarUsuario = async (req, res = response) => {
 }
 
 module.exports = {
+    getUsuario,
     getUsuarios,
     crearUsuario,
     actualizarUsuario,
