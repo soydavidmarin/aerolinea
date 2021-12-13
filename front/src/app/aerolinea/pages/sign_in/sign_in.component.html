@@ -1,52 +1,45 @@
-<section class="vh-100">
-    <div class="container py-5 h-100">
-      <div class="row d-flex align-items-center justify-content-center h-100">
-        <div class="col-md-8 col-lg-7 col-xl-6">
-          <img src="../../../assets/login_plane.jpg" class="img-fluid" alt="Phone image">
+<section class="vh-100 mt-5">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="../../../assets/login_plane.jpg" class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+        <h3 class="text-center mb-4">Aerolínea</h3>
+        <h5 class="text-center mb-4">Registro</h5>
+
+        <!-- Name input -->
+        <div class="form-outline mb-4">
+          <input type="email" id="form1Example15" class="form-control form-control-lg" />
+          <label class="form-label" for="form1Example15">Nombre</label>
         </div>
-        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-          <form>
-              <h3 class="text-center mb-4">Aerolínea</h3>
-              <h5 class="text-center mb-4">Registro</h5>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form1Example13" class="form-control form-control-lg" />
-              <label class="form-label" for="form1Example13">Correo electrónico</label>
-            </div>
-  
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <input type="password" id="form1Example23" class="form-control form-control-lg" />
-              <label class="form-label" for="form1Example23">Contraseña</label>
-            </div>
-  
-            <div class="d-flex justify-content-around align-items-center mb-4">
-              <!-- Checkbox -->
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="form1Example3"
-                  checked
-                />
-                <label class="form-check-label" for="form1Example3"> Recordarme </label>
-              </div>
-              <a routerLink="/aerolinea/login">Iniciar Sesión</a>
-              <a href="#!">¿Olvidaste tu contraseña?</a>
-            </div>
-  
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-lg btn-block" routerLink="/aerolinea/home">Registrarse</button>
-  
-            <div class="divider d-flex align-items-center my-4">
-              <p class="text-center fw-bold mx-3 mb-0 text-muted">Ó</p>
-            </div>
-            <a class="btn btn-primary btn-lg btn-block" style="background-color: #db3236" href="#!" role="button">
-              <i class="fab fa-google me-2"></i>Continuar con Google
-            </a>  
-          </form>
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input type="email" id="form1Example13" class="form-control form-control-lg" />
+          <label class="form-label" for="form1Example13">Correo electrónico</label>
         </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input type="password" id="form1Example23" class="form-control form-control-lg" />
+          <label class="form-label" for="form1Example23">Contraseña</label>
+        </div>
+
+        <div class="d-flex justify-content-around align-items-center mb-4">
+          <!-- Checkbox -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+            <label class="form-check-label" for="form1Example3"> Recordarme </label>
+          </div>
+          <a routerLink="/aerolinea/login">Iniciar Sesión</a>
+          <a href="#!">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <!-- Submit button -->
+        <button class="btn btn-primary btn-lg btn-block mt-5" (click)="registro()" [disabled]="usuario=='' || contrasena == '' || correo ==''">Registrarse</button>
+
       </div>
     </div>
-  </section>
+  </div>
+</section>

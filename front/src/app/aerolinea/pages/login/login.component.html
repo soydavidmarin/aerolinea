@@ -1,11 +1,10 @@
-<section class="vh-100">
+<section class="vh-100 mt-5">
     <div class="container py-5 h-100">
       <div class="row d-flex align-items-center justify-content-center h-100">
         <div class="col-md-8 col-lg-7 col-xl-6">
           <img src="../../../assets/login_plane.jpg" class="img-fluid" alt="Phone image">
         </div>
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-          <form>
               <h3 class="text-center mb-4">Aerolínea</h3>
               <h5 class="text-center mb-4">Login</h5>
             <!-- Email input -->
@@ -37,15 +36,8 @@
             </div>
   
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-lg btn-block" routerLink="/aerolinea/home">Iniciar Sesión</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block mt-5" (click)="login()" [disabled]="usuario=='' || contrasena == ''">Iniciar Sesión</button>
   
-            <div class="divider d-flex align-items-center my-4">
-              <p class="text-center fw-bold mx-3 mb-0 text-muted">Ó</p>
-            </div>
-            <a class="btn btn-primary btn-lg btn-block" style="background-color: #db3236" href="#!" role="button">
-              <i class="fab fa-google me-2"></i>Continuar con Google
-            </a>  
-          </form>
         </div>
       </div>
     </div>
