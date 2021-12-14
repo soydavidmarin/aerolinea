@@ -2,6 +2,7 @@ const { response } = require('express');
 const bcrypt = require('bcryptjs');
 const Vuelo = require('../models/vuelo');
 const { generarJWT } = require('../helpers/jwt');
+const fabricaVuelos = require('../factory/fabricaVuelos');
 
 
 const getVuelos = async (req,res) => {
@@ -14,10 +15,11 @@ const getVuelos = async (req,res) => {
 };
 
 const crearVuelo = async (req,res = response) => {
-    const { origen, destino, fecha, pasajeros} = req.body;
+    const { origen, destino, fecha, pasajeros, tipo, avion} = req.body;
+    
 
     try {
-        const vuelo = new Vuelo(req.body);
+        const vuelo = new fabricaVuelos(req.body).create;
         await vuelo.save();
 
         //Generar el token - JWT

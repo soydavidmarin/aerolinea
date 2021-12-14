@@ -17,7 +17,15 @@ const VueloSchema = Schema({
     pasajeros:{
         type: String,
         required: true
-    }  
+    } , 
+    tipo:{
+        type: String,
+        required: true
+    } ,
+    avion:{
+        type: String,
+        required: true
+    } 
 });
 
 VueloSchema.method('toJSON', function(){
