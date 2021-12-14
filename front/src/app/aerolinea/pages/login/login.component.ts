@@ -13,7 +13,12 @@ export class LoginComponent implements OnInit {
   usuario: String = '';
   contrasena: String = '';
   cargando: boolean = false;
-
+  /**
+     * Permite inyectar dependencias
+     * @param service servicio
+     * @param toastr servicio de mensajes para el usuario
+     * @param router servicio para las rutas de la app
+     */
   constructor(
     private service: AerolineaService,
     private toastr: ToastrService,
@@ -22,6 +27,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  /**
+   * Permite iniciar sesión
+   */
   login() {
     this.cargando = true;
     this.service

@@ -13,15 +13,22 @@ export class SignInComponent implements OnInit {
   usuario: String = '';
   contrasena: String = '';
   correo: String = '';
-  cargando:boolean = false;
-
+  cargando: boolean = false;
+  /**
+     * Permite inyectar dependencias
+     * @param service servicio
+     * @param toastr servicio de mensajes para el usuario
+     * @param router servicio para las rutas de la app
+     */
   constructor(private service: AerolineaService,
     private toastr: ToastrService,
     private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  /**
+   * Permite registrar un usuario
+   */
   registro() {
     this.cargando = true;
     this.service
